@@ -37,6 +37,8 @@ function slide() {
 
 function calculatePrice() {
     var select = Array.from(document.querySelectorAll(".list_arrow"));
+    var listPanel = Array.from(document.querySelectorAll(".list_panel li"));
+
 
     //panel variables
     var panelLeft = document.querySelector(".panel_left");
@@ -80,35 +82,58 @@ function calculatePrice() {
         option.classList.toggle("show");
 
         //event listener to option choices
-        choice.forEach(el => el.addEventListener("click", function () {
+        // choice.forEach(el => el.addEventListener("click", function () {
 
-            var dropdown = this.parentElement.parentElement;
-            this.parentElement.classList.remove("show");
+        //     var dropdown = this.parentElement.parentElement;
+        //     this.parentElement.classList.remove("show");
 
-            //check dropdowns for keywords
-            if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
-                summaryChairFeature.innerHTML = this.innerHTML;
-                summaryChairPrice.innerHTML = parseInt(this.dataset.price);
-                chairPrice = parseInt(this.dataset.price);
-            } else if (dropdown.innerHTML.indexOf("kolor") !== -1) {
-                summaryColorFeature.innerHTML = this.innerHTML;
-                summaryColorPrice.innerHTML = parseInt(this.dataset.price);
-                colorPrice = parseInt(this.dataset.price);
+        //     //check dropdowns for keywords
+        //     if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
+        //         summaryChairFeature.innerHTML = this.innerHTML;
+        //         summaryChairPrice.innerHTML = parseInt(this.dataset.price);
+        //         chairPrice = parseInt(this.dataset.price);
+        //     } else if (dropdown.innerHTML.indexOf("kolor") !== -1) {
+        //         summaryColorFeature.innerHTML = this.innerHTML;
+        //         summaryColorPrice.innerHTML = parseInt(this.dataset.price);
+        //         colorPrice = parseInt(this.dataset.price);
 
-            } else if (dropdown.innerHTML.indexOf("materiał") !== -1) {
-                summaryPatternFeature.innerHTML = this.innerHTML;
-                summaryPatternPrice.innerHTML = parseInt(this.dataset.price);
-                patternPrice = parseInt(this.dataset.price);
-            }
-            totalPrice = chairPrice + colorPrice + patternPrice + transportPrice;
-            totalSum.innerHTML = totalPrice;
-        }));
+        //     } else if (dropdown.innerHTML.indexOf("materiał") !== -1) {
+        //         summaryPatternFeature.innerHTML = this.innerHTML;
+        //         summaryPatternPrice.innerHTML = parseInt(this.dataset.price);
+        //         patternPrice = parseInt(this.dataset.price);
+        //     }
+        //     totalPrice = chairPrice + colorPrice + patternPrice + transportPrice;
+        //     totalSum.innerHTML = totalPrice;
+        // }));
 
 
 
     }));
 
-     //event listener for transport checkbox 
+    listPanel.forEach(choice => choice.addEventListener("click", function () {
+        var dropdown = this.parentElement.parentElement;
+        console.log(dropdown.parentElement.childNodes[5]);
+
+        console.log(dropdown.innerText);
+
+        if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
+            summaryChairFeature.innerHTML = this.innerHTML;
+            summaryChairPrice.innerHTML = parseInt(this.dataset.price);
+            chairPrice = parseInt(this.dataset.price);
+        } else if (dropdown.innerHTML.indexOf("kolor") !== -1) {
+            summaryColorFeature.innerHTML = this.innerHTML;
+            summaryColorPrice.innerHTML = parseInt(this.dataset.price);
+            colorPrice = parseInt(this.dataset.price);
+
+        } else if (dropdown.innerHTML.indexOf("materiał") !== -1) {
+            summaryPatternFeature.innerHTML = this.innerHTML;
+            summaryPatternPrice.innerHTML = parseInt(this.dataset.price);
+            patternPrice = parseInt(this.dataset.price);
+        }
+        totalPrice = chairPrice + colorPrice + patternPrice + transportPrice;
+        totalSum.innerHTML = totalPrice;
+    }));
+    //event listener for transport checkbox 
     transport.addEventListener("click", function () {
         if (transport.checked) {
             summaryTransportFeature.innerHTML = "Transport";
