@@ -1,0 +1,23 @@
+html, body {
+    font-family: $font-family;
+    font-size: $default-font-size;
+}
+
+header,
+section,
+footer {
+    width: 100%;
+}
+.center {
+    width: $container-width;
+    margin: 0 auto;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+span {
+    color: $span-color;
+}

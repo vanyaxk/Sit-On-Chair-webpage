@@ -1,0 +1,188 @@
+.cennik {
+    height: 700px;
+    background-color: $prices-background-color;
+    display: flex;
+    flex-direction: column;
+
+    .center {
+
+        >h3 {
+            margin: 40px 0 50px 0;
+            text-transform: uppercase;
+
+            &::after {
+                content: '';
+                display: block;
+                margin-top: 2px;
+                width: 310px;
+                height: 7px;
+                background-color: $span-color;
+            }
+        }
+    }
+}
+
+.plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .plan {
+        height: 500px;
+        width: 30%;
+        background-color: $plan-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        transition: background-color ease-in .3s;
+
+
+        &:hover {
+            background-color: $span-color;
+            border: 1px solid $border-color;
+
+            .kolo {
+                background-color: $span-color;
+                border: none;
+
+                .kolo2 {
+                    background-color: $default-text-color;
+                }
+            }
+
+            h3 {
+                color: $default-text-color;
+            }
+
+            .cena {
+                border: none;
+
+                p {
+                    color: $span-color;
+                }
+            }
+
+            .bottom {
+                p {
+                    &:nth-of-type(2n + 1) {
+                        background-color: $prices-background-color;
+                        color: $prices-text-color;
+                    }
+
+                    &:nth-of-type(2n) {
+                        background-color: $span-color;
+                        color: $default-text-color;
+                    }
+                }
+
+                button {
+                    background-color: $default-text-color;
+                    color: $span-color;
+                }
+            }
+
+            
+        }
+
+        
+    }
+
+    .kolo {
+        width: 60px;
+        height: 60px;
+        border: 1px solid $border-color;
+        background-color: $default-text-color;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        top: -30px;
+        transition: background-color ease-in .3s;
+
+        .kolo2 {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $border-color;
+            border-radius: 50%;
+            z-index: 2;
+        }
+    }
+
+    .bottom {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .options {
+            margin: 0;
+            width: 305px;
+
+            p {
+                padding: 10px 0;
+                width: 100%;
+                text-align: center;
+                color: #9D9D9D;
+
+                &:nth-of-type(2n + 1),
+                .options p:nth-of-type(2n) {
+                    background-color: #e4e4e4;
+                    transition: background-color .3s;
+                }
+            }
+        }
+
+        button {
+            width: 125px;
+            height: 35px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 1em;
+            text-transform: uppercase;
+            background-color: $span-color;
+            color: $default-text-color;
+            cursor: pointer;
+            transition: background-color .3s;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+        color: $span-color;
+        letter-spacing: 1.1px;
+    }
+
+    .cena {
+        background-color: $default-text-color;
+        width: 125px;
+        height: 125px;
+        border: 1px solid $border-color;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .3s;
+
+        p {
+            font-size: 2em;
+            color: #c2c2c2;
+            font-weight: bold;
+            transition: background-color .3s;
+        }
+
+        .oferta {
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* boksy z planami */

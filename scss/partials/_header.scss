@@ -1,0 +1,105 @@
+header {
+    height: $header-height;
+    background-color: $header-background-color;
+    color: $default-text-color;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 1em;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul.menu {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        >li {
+            margin-left: 20px;
+
+            &:first-of-type {
+                position: relative;
+
+                &:hover {
+                    .dropdown {
+                        display: block;
+                    }
+                }
+            }
+
+            .menu-link {
+                text-decoration: none;
+                color: $default-text-color;
+                text-transform: uppercase;
+                font-size: .9em;
+                font-weight: 700;
+                padding: 10px 5px;
+            }
+        }
+
+
+    }
+}
+
+// dropdown menu
+
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: -25px;
+    margin: 0;
+    display: none;
+
+    li {
+        display: block;
+        width: 135px;
+        background-color: black;
+        padding: 5px 10px;
+
+        &:first-of-type {
+            padding-top: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        &:last-of-type {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .menu-link {
+            display: block;
+        }
+    }
+
+
+
+    &::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $header-background-color;
+        position: absolute;
+        top: -20px;
+        left: 50px;
+    }
+
+
+
+
+
+
+}

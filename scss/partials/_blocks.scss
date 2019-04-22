@@ -1,0 +1,72 @@
+.blocks {
+    height: 350px;
+
+    .center {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .project {
+        margin-top: 20px;
+        width: 30%;
+        position: relative;
+
+        &:hover {
+            .desc {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .desc {
+            width: 330px;
+            height: 60px;
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 18px;
+            position: absolute;
+            bottom: 40px;
+            right: -25px;
+            padding: 15px 0 15px 15px;
+            background-color: rgba(255, 255, 255, 0.4);
+            opacity: 1;
+            visibility: visible;
+            transition: all .3s;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 170px;
+                height: 7px;
+                background-color: #53BB9F;
+            }
+        }
+    }
+}
+
+/* tekst na obrazku */
+
+
+.inputs {
+    border: 1px solid rgba(211, 211, 211, 0.7);
+    padding: 15px;
+
+    h4 {
+        font-weight: bold;
+
+        &::after {
+            content: '';
+            display: block;
+            margin-top: 2px;
+            width: 140px;
+            height: 7px;
+            background-color: #53BB9F;
+        }
+    }
+
+    p {
+        margin-top: 20px;
+        color: grey;
+    }
+}

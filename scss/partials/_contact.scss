@@ -1,0 +1,140 @@
+.contact {
+
+    .center {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h4 {
+        margin: 40px 0;
+        text-transform: uppercase;
+
+        &::after {
+            content: '';
+            display: block;
+            margin-top: 2px;
+            width: 320px;
+            height: 7px;
+            background-color: $span-color;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+
+        form,
+        .submit {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            width: 50%;
+        }
+
+        .submit {
+            width: 50%;
+        }
+    }
+}
+
+/* inputy */
+
+
+form {
+
+    input,
+    textarea {
+        margin: 10px 0;
+        outline: none;
+        border: 1px solid rgba(83, 187, 159, 0.4);
+        height: 35px;
+        line-height: 35px;
+        padding: 15px;
+    }
+
+    textarea {
+        height: 190px;
+        resize: none;
+        padding-top: 0;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 1.5em;
+        color: rgba(201, 201, 201, 1);
+        font-weight: 100;
+    }
+}
+
+
+
+/* prawa czesc */
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .img2-container {
+        width: 40%;
+        margin: 0 auto;
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .check {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20%;
+    }
+
+    .checkbox {
+        position: relative;
+        margin: 15px;
+
+        &::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: -15px;
+            left: -25px;
+            background: #fff;
+            border-radius: 2px;
+            border: 1px solid #24ba9f;
+            cursor: pointer;
+            clear: both;
+        }
+
+        &:checked {
+            &::after {
+                background: url(../images/form_ok.jpg) #fff no-repeat center center / contain;
+            }
+        }
+    }
+
+    label {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 1.1em;
+        padding: 5px;
+    }
+
+    button {
+        height: 40px;
+        margin: 0 auto;
+        width: 50%;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        background-color: #53BB9F;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 20px;
+    }
+}

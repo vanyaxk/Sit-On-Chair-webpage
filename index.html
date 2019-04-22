@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Strona z warsztatu</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sit On Chair - find your next favourite chair here</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800" rel="stylesheet">
+
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -32,19 +35,66 @@
 
     <section class="main">
         <div class="center">
-            <div class="img-container">
-                <img src="images/black_chair.png" alt="">
-            </div>
+            <div class="left-arrow">&lt;</div>
+            <article class="slide">
+                <div class="img-container">
+                    <img src="images/black_chair.png" alt="black chair">
 
-            <div class="text">
-                <h2>Sit <span>On</span> our <span>chair</span></h2>
+                </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquid, culpa delectus sed at
-                    consectetur repellendus voluptate, deserunt, dicta beatae vitae ullam nostrum exercitationem neque.
-                </p>
+                <div class="text">
+                    <h2>Sit <span>On</span> our <span>chair</span></h2>
 
-                <button type="submit">Zobacz więcej</button>
-            </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquid, culpa delectus sed
+                        at
+                        consectetur repellendus voluptate, deserunt, dicta beatae vitae ullam nostrum exercitationem
+                        neque.
+                    </p>
+
+                    <button type="submit">Zobacz więcej</button>
+                </div>
+            </article>
+
+            <article class="slide">
+                <div class="img-container">
+
+                    <img src="images/red_chair.png" alt="red chair">
+
+                </div>
+
+                <div class="text">
+                    <h2>Really <span>Sit</span> On <span>It</span></h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquid, culpa delectus sed
+                        at
+                        consectetur repellendus voluptate, deserunt, dicta beatae vitae ullam nostrum exercitationem
+                        neque.
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nulla blanditiis voluptate est
+                        vero accusantium facilis quisquam molestias repellat dolor!
+                    </p>
+                </div>
+            </article>
+
+            <article class="slide">
+                <div class="img-container">
+                    <img src="images/orange_chair.png" alt="orange chair">
+                </div>
+
+                <div class="text">
+                    <h2>Try <span>Our</span> New <span>chair</span></h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquid, culpa delectus sed
+                        at
+                        consectetur repellendus voluptate, deserunt, dicta beatae vitae ullam nostrum exercitationem
+                        neque.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil beatae cumque blanditiis
+                        laudantium error odit recusandae enim placeat voluptatibus laborum?
+                    </p>
+                </div>
+            </article>
+
+            <div class="right-arrow">&gt;</div>
         </div>
     </section><!-- end first section -->
 
@@ -156,6 +206,83 @@
         </div>
     </section><!-- end cennik -->
 
+    <section class="application">
+        <div class="center">
+            <section class="choice_part inline">
+                <div class="align_left">
+                    <h3>SKOMPONUJ SWOJE KRZESŁO</h3>
+                    <span class="green_bell"></span>
+                </div>
+
+                <div class="form">
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz rodzaj</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel">
+                            <li data-price="100">Clair</li>
+                            <li data-price="200">Margarita</li>
+                            <li data-price="400">Selena</li>
+                        </ul>
+                    </div>
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz kolor</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel">
+                            <li data-price="30">Czerwony</li>
+                            <li data-price="40">Czarny</li>
+                            <li data-price="50">Pomarańczowy</li>
+                        </ul>
+                    </div>
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz materiał</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel">
+                            <li data-price="30">Tkanina</li>
+                            <li data-price="190">Skóra</li>
+                        </ul>
+                    </div>
+                    <div class="checkbox check-box">
+                        <input type="checkbox" id="transport" data-price="200">
+                        <label for="transport">Transport</label>
+                    </div>
+                    <!--<div class="checkbox"></div>-->
+                    <!--<span class="list_label inline_text">Transport</span>-->
+                </div>
+            </section>
+
+            <section class="image_part inline">
+                <img src="images/red_chair.png" alt="red chair" class="selected_option">
+                <img src="images/black_chair.png" alt="black chair">
+                <img src="images/orange_chair.png" alt="orange chair">
+            </section>
+
+            <section class="summary_part inline">
+                <div class="align_right">
+                    <h3>PODSUMOWANIE</h3>
+                    <span class="green_bell"></span>
+                </div>
+
+                <div class="summary_panel">
+                    <div class="panel_left">
+                        <h4 class="title">Twój fotel</h4>
+                        <span class="color"></span>
+                        <span class="pattern"></span>
+                        <span class="transport"></span>
+                    </div>
+                    <div class="panel_right">
+                        <h4 class="title value"></h4>
+                        <span class="color value"></span>
+                        <span class="pattern value"></span>
+                        <span class="transport value"></span>
+                    </div>
+                    <div class="sum_label">SUMA</div>
+                    <div class="sum"><strong></strong></div>
+                </div>
+                <a href="" class="green_button">Zamawiam</a>
+            </section>
+        </div>
+    </section>
+
     <section class="contact">
         <div class="center">
 
@@ -181,7 +308,6 @@
                 </div>
             </div>
     </section><!-- end contact -->
-
     <footer>
         <div class="center">
 
