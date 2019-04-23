@@ -46,8 +46,6 @@ function calculatePrice() {
 
     //images of chairs
 
-    var chair_images = Array.from(document.querySelectorAll(".image_part img"));
-
     //variables for adding features and updating the price
     var summaryChairPrice = panelRight.querySelector("h4.title");
     var summaryChairFeature = panelLeft.querySelector('h4.title');
@@ -75,46 +73,22 @@ function calculatePrice() {
 
     var totalPrice = 0;
 
-    //loop for dropdowns
+    //loop and event listener for dropdowns
     select.forEach(element => element.addEventListener("click", function () {
         var option = this.parentElement.childNodes[5];
         var choice = Array.from(option.children);
         option.classList.toggle("show");
-
-        //event listener to option choices
-        // choice.forEach(el => el.addEventListener("click", function () {
-
-        //     var dropdown = this.parentElement.parentElement;
-        //     this.parentElement.classList.remove("show");
-
-        //     //check dropdowns for keywords
-        //     if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
-        //         summaryChairFeature.innerHTML = this.innerHTML;
-        //         summaryChairPrice.innerHTML = parseInt(this.dataset.price);
-        //         chairPrice = parseInt(this.dataset.price);
-        //     } else if (dropdown.innerHTML.indexOf("kolor") !== -1) {
-        //         summaryColorFeature.innerHTML = this.innerHTML;
-        //         summaryColorPrice.innerHTML = parseInt(this.dataset.price);
-        //         colorPrice = parseInt(this.dataset.price);
-
-        //     } else if (dropdown.innerHTML.indexOf("materiał") !== -1) {
-        //         summaryPatternFeature.innerHTML = this.innerHTML;
-        //         summaryPatternPrice.innerHTML = parseInt(this.dataset.price);
-        //         patternPrice = parseInt(this.dataset.price);
-        //     }
-        //     totalPrice = chairPrice + colorPrice + patternPrice + transportPrice;
-        //     totalSum.innerHTML = totalPrice;
-        // }));
-
-
-
     }));
 
+    //loop and event listener for choices
     listPanel.forEach(choice => choice.addEventListener("click", function () {
+        this.parentElement.classList.remove("show");
         var dropdown = this.parentElement.parentElement;
-        console.log(dropdown.parentElement.childNodes[5]);
 
-        console.log(dropdown.innerText);
+        console.log(this.parentElement);
+
+        var arrChoice = Array.from(this.parentElement.children);
+        console.log(arrChoice);
 
         if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
             summaryChairFeature.innerHTML = this.innerHTML;
@@ -125,6 +99,8 @@ function calculatePrice() {
             summaryColorPrice.innerHTML = parseInt(this.dataset.price);
             colorPrice = parseInt(this.dataset.price);
 
+
+            chairImages.forEach(image => console.log(image));
         } else if (dropdown.innerHTML.indexOf("materiał") !== -1) {
             summaryPatternFeature.innerHTML = this.innerHTML;
             summaryPatternPrice.innerHTML = parseInt(this.dataset.price);
