@@ -1,4 +1,4 @@
-.cennik {
+.price_list {
     height: 700px;
     background-color: $prices-background-color;
     display: flex;
@@ -41,11 +41,11 @@
             background-color: $span-color;
             border: 1px solid $border-color;
 
-            .kolo {
+            .circle {
                 background-color: $span-color;
                 border: none;
 
-                .kolo2 {
+                .circle2 {
                     background-color: $default-text-color;
                 }
             }
@@ -54,7 +54,7 @@
                 color: $default-text-color;
             }
 
-            .cena {
+            .price {
                 border: none;
 
                 p {
@@ -87,7 +87,7 @@
         
     }
 
-    .kolo {
+    .circle {
         width: 60px;
         height: 60px;
         border: 1px solid $border-color;
@@ -97,7 +97,7 @@
         position: absolute;
         top: -30px;
 
-        .kolo2 {
+        .circle2 {
             width: 30px;
             height: 30px;
             position: absolute;
@@ -154,7 +154,7 @@
         letter-spacing: 1.1px;
     }
 
-    .cena {
+    .price {
         background-color: $default-text-color;
         width: 125px;
         height: 125px;
@@ -172,11 +172,9 @@
             transition: none;
         }
 
-        .oferta {
+        .price_period {
             font-size: 1em;
             text-transform: uppercase;
         }
     }
 }
-
-/* boksy z planami */

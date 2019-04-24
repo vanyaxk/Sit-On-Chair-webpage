@@ -36,7 +36,7 @@ function slide() {
 }
 
 function calculatePrice() {
-    var select = Array.from(document.querySelectorAll(".list_arrow"));
+    var select = Array.from(document.querySelectorAll("div.drop_down_list"));
     var listPanel = Array.from(document.querySelectorAll(".list_panel li"));
 
 
@@ -75,20 +75,16 @@ function calculatePrice() {
 
     //loop and event listener for dropdowns
     select.forEach(element => element.addEventListener("click", function () {
-        var option = this.parentElement.childNodes[5];
-        var choice = Array.from(option.children);
+        var option = this.childNodes[5];
         option.classList.toggle("show");
     }));
 
     //loop and event listener for choices
     listPanel.forEach(choice => choice.addEventListener("click", function () {
-        this.parentElement.classList.remove("show");
+        this.parentElement.parentElement.classList.remove("show");
         var dropdown = this.parentElement.parentElement;
 
-        console.log(this.parentElement);
-
         var arrChoice = Array.from(this.parentElement.children);
-        console.log(arrChoice);
 
         if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
             summaryChairFeature.innerHTML = this.innerHTML;
