@@ -5,6 +5,10 @@
     .center {
         display: flex;
         justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     h3 {
@@ -25,13 +29,12 @@
         color: white;
         text-align: center;
         text-transform: uppercase;
-        width: 200px;
+        width: 100%;
         padding: 10px 30px;
         font-size: 24px;
         display: inline-block;
         font-family: 'ralewaymedium', Arial, Tahoma, sans-serif;
-        margin-top: 20px;
-        margin-left: 55px;
+        margin: $default-margin 0;
         border-radius: 8px;
         text-decoration: none;
     }
@@ -42,6 +45,12 @@
     width: 350px;
     padding: 14px;
     vertical-align: top;
+
+    @include mobile {
+        display: block;
+        width: 85vw;
+        margin: 0 auto;
+    }
 }
 
 .form {
@@ -57,6 +66,10 @@
     padding: 9px 12px;
     position: relative;
     cursor: pointer;
+
+    @include mobile {
+        width: 100%;
+    }
 }
 
 .list_label {
@@ -250,6 +263,10 @@
         margin-top:10px;
         cursor: pointer;
         color: #585858;
+      }
+
+      @include mobile {
+          width: 100%;
       }
   }  
   .title {

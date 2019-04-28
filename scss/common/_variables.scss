@@ -2,7 +2,7 @@ $font-family: 'Raleway', sans-serif;
 $default-font-size: 16px;
 $container-width: 1024px;
 $header-height: 60px;
-
+$default-margin: 20px;
 
 
 
@@ -15,3 +15,9 @@ $prices-background-color: #f1f1f1;
 $plan-color: #F9F9F9;
 $prices-text-color: #747474;
 $border-color: rgb(211, 211, 211);
+
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}

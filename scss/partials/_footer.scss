@@ -9,10 +9,19 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     p {
         color: #9e9e9e;
+
+        @include mobile {
+            padding: 0 15px;
+            text-align: center;
+        }
     }
 
     .name {
@@ -22,10 +31,26 @@ footer {
             font-weight: 700;
             color: #9e9e9e;
         }
+
+        @include mobile {
+            margin-bottom: $default-margin;
+        }
+    }
+
+    .icons {
+        @include mobile {
+            margin: $default-margin 0;
+            width: 70%;
+        }
     }
 
     .icons ul {
         display: flex;
         flex-direction: row;
+
+        @include mobile {
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }

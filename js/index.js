@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     slide();
     calculatePrice();
+    mobileMenu();
 });
+//hamburger menu
+function mobileMenu() {
+    var ham = document.querySelector('section.hamburger');
+    var nav = document.querySelector('nav');
+    function toggleClass(e) {
+        e.stopPropagation();
+        this.classList.toggle("activate");
+        nav.classList.toggle("show");
+    }
+
+    ham.addEventListener("click", toggleClass);
+}
 
 function slide() {
     //slider
@@ -83,8 +96,6 @@ function calculatePrice() {
     listPanel.forEach(choice => choice.addEventListener("click", function () {
         this.parentElement.parentElement.classList.remove("show");
         var dropdown = this.parentElement.parentElement;
-
-        var arrChoice = Array.from(this.parentElement.children);
 
         if (dropdown.innerHTML.indexOf("rodzaj") !== -1) {
             summaryChairFeature.innerHTML = this.innerHTML;

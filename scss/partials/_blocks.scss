@@ -1,47 +1,71 @@
 .blocks {
-    height: 350px;
-
+    min-height: 50px;
+    padding-bottom: $default-margin;
+    
     .center {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
     }
 
-    .project {
-        margin-top: 20px;
-        width: 30%;
-        position: relative;
+}
 
-        &:hover {
-            .desc {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
+.project {
+    margin-top: $default-margin;
+    width: 30%;
+    position: relative;
+    @include mobile {
+        width: 80%;
+        // min-height: 250px;
+    }
 
+    &:hover {
         .desc {
-            width: 330px;
-            height: 60px;
-            font-family: Arial;
-            font-weight: 400;
-            font-size: 18px;
-            position: absolute;
-            bottom: 40px;
-            right: -25px;
-            padding: 15px 0 15px 15px;
-            background-color: rgba(255, 255, 255, 0.4);
-            opacity: 1;
-            visibility: visible;
-            transition: all .3s;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 170px;
-                height: 7px;
-                background-color: #53BB9F;
-            }
+            opacity: 0;
+            visibility: hidden;
         }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.desc {
+    width: 100%;
+    height: 60px;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 1em;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    padding: 15px 0 15px 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s;
+
+    @include mobile {
+        width: 100%;
+        min-height: 60px;
+        bottom: 5%;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 170px;
+        height: 7px;
+        background-color: $span-color;
     }
 }
 
@@ -61,12 +85,18 @@
             margin-top: 2px;
             width: 140px;
             height: 7px;
-            background-color: #53BB9F;
+            background-color: $span-color;
         }
     }
 
     p {
-        margin-top: 20px;
+        margin-top: $default-margin;
         color: grey;
+    }
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $default-margin;
     }
 }

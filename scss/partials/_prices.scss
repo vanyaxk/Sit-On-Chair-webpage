@@ -1,14 +1,19 @@
 .price_list {
-    height: 700px;
+    min-height: 700px;
     background-color: $prices-background-color;
     display: flex;
     flex-direction: column;
-
+    padding-bottom: $default-margin;
+    
     .center {
 
         >h3 {
             margin: 40px 0 50px 0;
             text-transform: uppercase;
+
+            @include mobile {
+                margin-left: 5%;
+            }
 
             &::after {
                 content: '';
@@ -24,11 +29,15 @@
 
 .plans {
     display: flex;
-    flex-direction: row;
+    flex-direction: row wrap;
     justify-content: space-between;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     .plan {
-        height: 500px;
+        min-height: 600px;
         width: 30%;
         background-color: $plan-color;
         display: flex;
@@ -84,6 +93,11 @@
             
         }
 
+        @include mobile {
+            width: 90%;
+            margin: 20px auto;
+            border: 1px solid $border-color;
+        }
         
     }
 
@@ -111,7 +125,7 @@
     }
 
     .bottom {
-        height: 200px;
+        min-height: 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -135,8 +149,8 @@
         }
 
         button {
-            width: 125px;
-            height: 35px;
+            width: 150px;
+            height: 45px;
             border: none;
             outline: none;
             border-radius: 10px;
@@ -170,11 +184,19 @@
             color: #c2c2c2;
             font-weight: bold;
             transition: none;
+
+            @include mobile {
+                font-size: 1.5em;
+            }
         }
 
         .price_period {
             font-size: 1em;
             text-transform: uppercase;
+
+            @include mobile {
+                font-size: .6em;
+            }            
         }
     }
 }
